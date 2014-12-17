@@ -1,0 +1,8 @@
+<div class="logger">
+	<table class="table table-condensed">
+		<tr ng-repeat="line in log | orderBy: '-time' | limitTo:10" class="{{line.type}}">
+			<td class="bold shrink">[{{line.type}}] </td>
+			<td>{{line.data}}</td>
+		</tr>
+	</table>
+</div>

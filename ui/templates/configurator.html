@@ -1,0 +1,25 @@
+<div class="configurator">
+	<div>
+		<ul class="list-unstyled">
+			<li ng-repeat="(stat, value) in getMarkerStats()">
+				<b>{{stat}}</b>: {{value}}
+			</li>
+		</ul>
+	</div>
+
+	<div>
+		Remaining points: {{getRemainingPoints()}}
+	</div>
+
+	<div class="perks">
+		<div ng-repeat="perk in perks" class="perk-type">
+			<h3>{{perk.name}}</h3>
+			<div>
+				<div class="perk pull-left" ng-repeat="(level, costs) in perk.levels" ng-class="{active: perkIsActive(perk.stat, perk.value * level)}" ng-click="activatePerk(perk.stat, level)">
+					{{perk.value * level | positiveNegative}}
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>

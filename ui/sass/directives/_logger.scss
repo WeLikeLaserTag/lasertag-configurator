@@ -1,0 +1,12 @@
+.logger {
+  background: #eeeeee;
+  font-family: "Courier New", Courier, monospace;
+  table tr > td {
+    vertical-align: top;
+    width: 99%;
+    &.shrink {
+      white-space: nowrap;
+      width: auto;
+    }
+  }
+}

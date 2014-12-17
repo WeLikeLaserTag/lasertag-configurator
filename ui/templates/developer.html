@@ -1,0 +1,88 @@
+<div ng-controller="DeviceController" class="devices">
+
+	<div class="devices-content">
+		<div class="toolbar">
+			<folder-path changed="folderSelected"></folder-path>
+		</div>
+		<div ng-repeat="project in projects" class="project">
+			<div class="pull-left">
+				<h3>{{project.name}}</h3>
+				<span class="small">
+					{{project.path}}
+				</span>
+			</div>
+
+			<div class="actions pull-right">
+				<button ng-click="build(project.name, project.path)" class="btn btn-primary">
+					<i class="fa fa-upload"></i> build
+				</button>
+				<button ng-click="upload(project.name)" class="btn btn-primary">
+					<i class="fa fa-upload"></i> upload
+				</button>
+				<button ng-click="buildAndUpload(project.name, project.path)" class="btn btn-primary">
+					<i class="fa fa-upload"></i> build & upload
+				</button>
+				<button ng-click="removeProject(project)" class="btn">
+					<i class="fa fa-remove"></i>
+				</button>
+			</div>
+		</div>
+		<logger log="log"></logger>
+	</div>
+
+	<div class="sidebar">
+		<h3>Devices</h3>
+		<ul class="list-unstyled">
+			<li ng-repeat="port in ports">
+				{{port.name}}
+				<br ng-if="port.unverified">
+				<br>
+				<small>board: {{port.board.name}}</small>
+			</li>
+			<li ng-if="ports.length == 0">
+				No devices found
+			</li>
+		</ul>
+	</div>
+
+	<div class="setup-wizard" ng-if="!setupWizardDone">
+		<h2>Setup</h2>
+
+		<p>
+			Please disconnect all taggers/sensors/boards from your computer and press continue.
+		</p>
+
+		<div class="actions">
+			<button class="btn btn-primary" ng-click="setupContinue()">
+				<i class="fa fa-chevron-circle-right"></i>
+				continue
+			</button>
+		</div>
+	</div>
+
+	<div class="setup-wizard" ng-repeat="(hash, port) in unknownPorts" ng-if="port">
+		<h2>New device connected</h2>
+
+		<p>
+			<ul class="list-unstyled">
+				<li ng-repeat="(key, value) in port">
+					<strong>{{key}}</strong>: {{value}}
+				</li>
+			</ul>
+		</p>
+		<input type="text" ng-model="port.name" placeholder="name/alias">
+		<select ng-model="port.board" ng-options="board.name for board in boards"></select>
+
+		<div class="actions">
+			<button class="btn btn-danger" ng-click="ignorePort(port, hash)">
+				<i class="fa fa-remove"></i>
+				ignore this port
+			</button>
+			<button class="btn btn-primary" ng-click="savePort(port, hash)">
+				<i class="fa fa-save"></i>
+				save
+			</button>
+		</div>
+	</div>
+
+</div>

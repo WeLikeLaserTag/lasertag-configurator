@@ -1,0 +1,20 @@
+{
+  "name": "lasertag-configurator",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "Julian Hollmann <julian.hollmann@googlemail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ui-router": "~0.2.13"
+  }
+}

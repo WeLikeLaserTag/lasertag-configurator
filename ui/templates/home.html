@@ -1,0 +1,20 @@
+<div class="home">
+	<div class="menu">
+		<div class="home-image">
+			<h2>#laserTag</h2>
+		</div>
+		<div ng-repeat="item in menu" class="menu-item" ui-sref="{{item.sref}}">
+			<i class="fa {{item.icon}}"></i>
+			<small>{{item.name}}</small>
+		</div>
+	</div>
+	<div class="blog-posts">
+		<h3><i class="fa fa-rss"></i> News</h3>
+		<ul class="list-unstyled">
+			<li ng-repeat="post in posts | limitTo:5" ng-click="openInBrowser(post.link)">
+				<h4>{{post.title}}</h4>
+				<small>{{post.contentSnippet}}</small>
+			</li>
+		</ul>
+	</div>
+</div>

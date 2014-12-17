@@ -1,0 +1,249 @@
+@import "directives/directiveConfig";
+@import "views/viewConfig";
+
+body {
+  background-color: #999;
+}
+
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.header {
+  height: 50px;
+  padding: 5px;
+  background: #222222;
+  color: #ffffff;
+  position: relative;
+  .navigation {
+    position: absolute;
+    left: 0;
+    height: 50px;
+    width: 200px;
+    text-align: left;
+    font-size: 18px;
+    padding-top: 2px;
+    padding-left: 5px;
+  }
+  .logo {
+    position: absolute;
+    font-size: 18px;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+    height: 50px;
+    text-align: center;
+    padding-top: 7px;
+  }
+  .window-actions {
+    position: absolute;
+    padding-top: 2px;
+    right: 0;
+    width: 200px;
+    height: 50px;
+    text-align: right;
+  }
+}
+
+.header .btn, .header .btn:hover, .header .btn:focus {
+  background: #222;
+  outline: none;
+}
+
+.header .btn:hover {
+  color: #999;
+}
+
+.content {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+}
+
+.devices {
+  .devices-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 280px;
+    bottom: 0;
+  }
+  .toolbar {
+    padding: 7px;
+    height: 50px;
+    bottom: 0;
+    background: #333;
+    color: #FFF;
+  }
+  .sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 280px;
+    padding: 10px;
+    background: #444444;
+    color: #FFFFFF;
+    ul {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+    li {
+      padding: 10px;
+      background: #555555;
+      small {
+        color: #999999;
+      }
+    }
+    h3 {
+      font-size: 120%;
+      margin: 0;
+      height: 40px;
+      padding-top: 6px;
+    }
+  }
+  .setup-wizard {
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #333;
+    color: #FFFFFF;
+    z-index: 1000;
+    p {
+      font-size: 16px;
+    }
+    .actions {
+      position: absolute;
+      height: 55px;
+      bottom: 0;
+      padding: 10px;
+      left: 0;
+      right: 0;
+      background: #555;
+    }
+  }
+  .project {
+    h3 {
+      margin: 0;
+    }
+    background: #222222;
+    color: #FFFFFF;
+    overflow: hidden;
+    padding: 10px;
+    border-top: 1px solid #444444;
+    .small {
+      color: #999999;
+    }
+    .actions {
+      padding-top: 7px;
+    }
+  }
+}
+
+.home {
+  .home-image {
+    background: url("../images/home_image.JPG");
+    background-size: 100%;
+    background-position: 0 -160px;
+    height: 200px;
+    width: 100%;
+    border-bottom: 3px solid #111111;
+    position: relative;
+    h2 {
+      position: absolute;
+      left: 12px;
+      font-size: 220%;
+      bottom: 0;
+      color: #FFFFFF;
+      text-shadow: 2px 1px 16px rgba(0, 0, 0, 1);
+      font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+    }
+  }
+  .menu {
+    .menu-item {
+      cursor: pointer;
+      width: 140px;
+      height: 140px;
+      color: #FFFFFF;
+      background: #333333;
+      padding: 10px;
+      margin: 10px;
+      float: left;
+      text-align: center;
+      border-radius: 8px;
+      i {
+        font-size: 80px;
+      }
+      small {
+        display: inline-block;
+        margin-top: 20px;
+      }
+    }
+    position: absolute;
+    right: 300px;
+    top: 0;
+    height: 0;
+    left: 0;
+    bottom: 0;
+  }
+  .blog-posts {
+    position: absolute;
+    width: 300px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: #FFFFFF;
+    background: #333;
+    padding: 10px;
+    li {
+      cursor: pointer;
+      background: #555555;
+      padding: 6px;
+      margin-top: 10px;
+      border-left: 4px solid #204d74;
+      transition: all 100ms ease-in;
+      &:hover {
+        background: #777777;
+      }
+      small {
+        font-size: 98%;
+      }
+    }
+    h3, h4 {
+      margin: 0;
+    }
+    h4 {
+      margin-bottom: 4px;
+      line-height: 22px;
+    }
+  }
+}
+
+.logger {
+  position: fixed;
+  height: 200px;
+  bottom: 0;
+  left: 0;
+  right: 280px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #222;
+  border-top: 2px solid #111;
+  .table {
+    margin-bottom: 0;
+  }
+}
