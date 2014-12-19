@@ -1,6 +1,7 @@
 # LaserTag Configuration Tool
 
-TBD
+![/screenshots/1.png]()
+![/screenshots/2.png]()
 
 # License
 
