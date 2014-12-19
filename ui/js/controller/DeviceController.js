@@ -75,7 +75,7 @@ LasertagConfigurator.controller('DeviceController', ['$scope', 'PlatformioServic
 			ignore: true,
 			portData: port
 		});
-		$scope.unknownPorts[hash] = null;
+		delete $scope.unknownPorts[hash];
 	};
 
 	$scope.savePort = function(port, hash) {
@@ -83,7 +83,7 @@ LasertagConfigurator.controller('DeviceController', ['$scope', 'PlatformioServic
 			ignore: false,
 			portData: port
 		});
-		$scope.unknownPorts[hash] = null;
+		delete $scope.unknownPorts[hash];
 	};
 
 	function getPortsArr() {
@@ -91,22 +91,6 @@ LasertagConfigurator.controller('DeviceController', ['$scope', 'PlatformioServic
 	}
 
 	var serialPort = require("serialport");
-
-	function checkUnverified(port) {
-		// this is true for my old duemilanove and new nano
-		if(port.manufacturer === 'FTDI' && port.productId === '0x6001') {
-			return true;
-		}
-		return false;
-	}
-
-	function isArduino(port) {
-		if(checkUnverified(port)) {
-			port.unverified = true;
-			return true;
-		}
-		return port.manufacturer.indexOf('Arduino') !== -1;
-	}
 
 	function getPortByHash(hash) {
 		return ConfigStore.get('port:' + hash);
