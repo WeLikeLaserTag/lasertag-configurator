@@ -1,7 +1,13 @@
 # LaserTag Configuration Tool
 
-![/screenshots/1.png]()
-![/screenshots/2.png]()
+## Features
+- Manage C/C++ projects for your laserTag hardware
+- one-click "compile & flash" button
+- automatically detects your lasertag hardware
+
+![](/screenshots/1.png)
+
+![](/screenshots/2.png)
 
 # License
 
